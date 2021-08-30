@@ -1,48 +1,79 @@
-//create an array of destinations
 let destinations = ["Grand Teton", "Bryce Canyon", "Zion", "Lake Tahoe", "Yellowstone"];
-//create an array of restaurants
-let restaurants = ["A Steakhouse", "Sushi Spot", "Pizza Place", "Italian", "Burger Joint"];
-//create an array of mode of transportation
-let modeOfTransport = ["Automobile", "Plane", "Train", "Bus"];
-//create an array of form of entertainment
-let entertainment = ["Hiking", "Bird-watching", "Fishing", "Boating", "Sun-bathe"];
 
-//create a function to random-generate an index of each array
-//Does this function need to hold certain items and reselect others if user isn't satisfied with the results??
+let restaurants = ["A Steakhouse", "Sushi Spot", "Pizza Place", "Italian Bistro", "Burger Joint"];
+
+let modeOfTransport = ["Automobile", "Plane", "Train", "Bus"];
+
+let entertainment = ["Hiking", "Bird-watching", "Fishing", "Boating", "Sun-bathing"];
 
 function getRandomItem (array1){ 
     return Math.floor(Math.random() * array1.length );
     }
 
-
 let myDestination = getRandomItem(destinations);
 
-console.log(destinations[myDestination]); //this will log the item at the index of [number] 
-
 let myRestaurant = getRandomItem(restaurants);
-
-console.log(restaurants[myRestaurant]); //logs a random restaurant
-
+ 
 let myTransport = getRandomItem(modeOfTransport);
-
-console.log(modeOfTransport[myTransport]); //logs a random mode of transportation
 
 let myEntertainment = getRandomItem(entertainment);
 
-console.log(entertainment[myEntertainment]); //logs a random form of entertainment
+let newLine = "\r\n"; 
 
-window.alert("Your destination is" + " " + (destinations[myDestination]) +" " + "Your restaurant is a" + " " + 
-(restaurants[myRestaurant])+" " + "Your mode of transportation is" + " " + (modeOfTransport[myTransport])+" " + 
-"Your entertainment will be" + " " + (entertainment[myEntertainment]));
-//clean the presentation up....line breaks??
+window.alert("Your destination is:" + " " + (destinations[myDestination]))
 
-let userInput = window.prompt("Are you happy with the results?")
+let userInput = window.prompt("Are you happy with the destination result? yes or no") 
 
-//window.prompt "are you happy with the results?"
 while(userInput === "no"){
-    let myDestination = getRandomItem(destinations); window.alert("your destination is" + (destinations[myDestination])) 
-    let userInput1 = window.prompt("Are you happy with the result?");
+    let myDestination = getRandomItem(destinations); window.alert("Your destination is:" + " " + (destinations[myDestination])) 
+    let userInput1 = window.prompt("Are you happy with the destination result? yes or no");
     if (userInput1 === "yes"){
-        break; //user input yes is not breaking the loop....find solution!!!!!
+        break; 
     }
 }
+window.alert("Your restaurant is:" + " " + (restaurants[myRestaurant]))
+
+let userInput2 = window.prompt("Are you happy with the restaurant result? yes or no");
+
+while(userInput2 === "no"){
+    let myRestaurant = getRandomItem(restaurants); window.alert("Your restaurant is:" + " " + (restaurants[myRestaurant])) 
+    let userInput2 = window.prompt("Are you happy with the restaurant result? yes or no");
+    if (userInput2 === "yes"){
+        break; 
+    }
+}
+window.alert("Your mode of transportation is:" + " " + (modeOfTransport[myTransport]))
+
+let userInput3 = window.prompt("Are you happy with the mode of transportation result? yes or no");
+
+while(userInput3 === "no"){
+    let myTransport = getRandomItem(modeOfTransport); window.alert("Your mode of transport is:" + " " + (modeOfTransport[myTransport])) 
+    let userInput3 = window.prompt("Are you happy with the mode of transportation result? yes or no");
+    if (userInput3 === "yes"){
+        break; 
+    }
+}
+window.alert("Your form of entertainment is:" + " " + (entertainment[myEntertainment]))
+
+let userInput4 = window.prompt("Are you happy with the form of entertainment result? yes or no");
+
+while(userInput4 === "no"){
+
+    let myEntertainment = getRandomItem(entertainment); window.alert("Your form of entertainment is:" + " " + (entertainment[myEntertainment])) 
+    let userInput4 = window.prompt("Are you happy with the form of entertainment result? yes or no");
+    if (userInput4 === "yes"){
+        break; 
+    }
+}
+
+window.confirm("Your destination is:" + " " + (destinations[myDestination]) + newLine + "Your restaurant is:" + " " + 
+(restaurants[myRestaurant]) + newLine + "Your mode of transportation is:" + " " + (modeOfTransport[myTransport]) + newLine + 
+"Your entertainment will be:" + " " + (entertainment[myEntertainment]) + newLine + "Click OK to confirm your trip.")
+
+console.log("Your destination is:" + " " + (destinations[myDestination]) + newLine + "Your restaurant is:" + " " + 
+(restaurants[myRestaurant]) + newLine + "Your mode of transportation is:" + " " + (modeOfTransport[myTransport]) + newLine + 
+"Your entertainment will be:" + " " + (entertainment[myEntertainment]) + newLine + "Click OK to confirm your trip.");
+
+
+
+
